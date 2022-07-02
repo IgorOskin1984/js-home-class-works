@@ -30,7 +30,7 @@ let ask = confirm("Do you want to create a new group-member?")
 while (ask == true) {
     group[i] = new Human;
     i++;
-    ask = confirm("Do you want to create a new group-member?")
+    ask = confirm("Do you want to create another new group-member?")
 }
 
 //сортируем массив.........................................
