@@ -9,9 +9,6 @@ let
     getmin = get("min"),
     getHrs = get("hours");
 
-//функциия выбора html елемента..........................
-
-
 //функция изменения цвета.................................
 const colorChange = (y) => {
     let div = document.querySelectorAll("div.stopwatch-display")
@@ -40,24 +37,23 @@ function add() {
     if (sec < 10) {
         getSec.innerText = `0${sec}`;
     }
-    if (sec >= 10) {
+    else {
         getSec.innerText = sec;
     }
     if (min < 10) {
         getmin.innerText = `0${min}`;
     }
-    if (min >= 10) {
+    else {
         getmin.innerText = min;
     }
     if (hrs < 10) {
         getHrs.innerText = `0${hrs}`;
     }
-    if (hrs >= 10) {
+    else {
         getHrs.innerText = hrs;
     }
-
-
 }
+
 //функция объединения двух функций для setInterval
 const timer = () => {
     oneSec();
@@ -65,35 +61,37 @@ const timer = () => {
 }
 //итоговая функция запуска таймера
 const timerOn = () => {
-    time = setInterval(timer, 1000)
+    if (!time) {
+        time = setInterval(timer, 1000)
+    }
+}
+
+//функция остановки таймера..........................
+const stop = () => {
+    time =  clearInterval(time);
 }
 
 //функция сброса таймера..........................
 function timerReset() {
+    stop();
     sec = 0;
     min = 0;
     hrs = 0;
-    clearInterval(time);
     getSec.innerText = `0${sec}`;
     getmin.innerText = `0${min}`;
     getHrs.innerText = `0${hrs}`;
-
 }
 
 //вызов функций на нужной кнопке
 get("start").onclick = () => {
     colorChange("green");
-    timerOn()
+    timerOn();
 }
 get("stop").onclick = () => {
     colorChange("red");
-    clearInterval(time);
+    stop();
 }
 get("reset").onclick = () => {
-    colorChange("silver")
-    timerReset()
+    colorChange("silver");
+    timerReset();
 }
-
-
-
-
