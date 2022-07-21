@@ -1,0 +1,12 @@
+.focus-border{
+    border: 20px solid green;
+    display: block;
+    color: green;
+}
+input{
+display: block;
+}
+.error{
+    border: 20px solid red;
+    display: block;
+}
