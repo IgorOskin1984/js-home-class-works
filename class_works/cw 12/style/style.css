@@ -1,9 +1,15 @@
-form{
+form {
     display: flex;
     justify-content: space-around;
     flex-direction: column;
 }
-input {
-    width: 200px;
-    margin: 5px;
+
+.normal-input {}
+
+input[type="checkbox"] {
+    width: 10px;
+}
+
+.error {
+    border-color: red;
 }
