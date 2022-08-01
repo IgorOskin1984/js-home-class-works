@@ -35,13 +35,5 @@ function cardBuild(data) {
         div.className = 'card'
 
         document.querySelector(`body`).append(div)
-
     })
-
-
-
-
-
 }
-
-
