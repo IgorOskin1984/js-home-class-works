@@ -1,0 +1,15 @@
+form {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.normal-input {}
+
+input[type="checkbox"] {
+    width: 10px;
+}
+
+.error {
+    border-color: red;
+}
